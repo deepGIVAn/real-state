@@ -1,0 +1,122 @@
+.c-wrapper {
+    .c-container {
+        justify-content: space-between;
+
+        &>div {
+            flex: 1;
+        }
+
+        .c-right {
+            width: 100%;
+
+            .image-container {
+                width: 30rem;
+                height: 35rem;
+                overflow: hidden;
+                border-radius: 15rem 15rem 0 0;
+                border: 8px solid rgba(255, 255, 255, 0.12);
+
+                &>img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+
+        .c-left {
+            gap: 0.5rem;
+
+            .contactModes {
+                margin-top: 2rem;
+                gap: 1rem;
+
+                .row {
+                    gap: 1.5rem;
+
+                    .mode {
+                        width: 16rem;
+                        padding: 1rem;
+                        border: 0.8px solid rgba(128, 128, 128, 0.143);
+                        border-radius: 5px;
+                        gap: 1rem;
+                        transition: all 300ms ease-in;
+
+                        .icon {
+                            padding: 10px;
+                            background: #eeeeff;
+                            border-radius: 5px;
+
+                            & svg {
+                                fill: var(--blue);
+                            }
+                        }
+
+                        .detail {
+                            .primaryText {
+                                font-size: 1.1rem;
+                                font-weight: 600;
+                            }
+                        }
+
+                        &>:nth-child(1) {
+                            width: 100%;
+                            gap: 1.6rem;
+                        }
+
+                        .button {
+                            width: 100%;
+                            background: var(--lightBlue);
+                            color: var(--blue);
+                            font-style: 0.9rem;
+                            font-weight: 600;
+                        }
+
+                        &:hover {
+                            scale: 1.07;
+                            box-shadow: var(--shadow);
+
+                            .button {
+                                background: var(--blue-gradient);
+                                color: white;
+                                scale: 0.9;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:1024px) {
+    .c-wrapper {
+        .c-container {
+            flex-direction: column;
+
+            .c-right {
+                width: 100%;
+                justify-content: center;
+
+                .image-container {
+                    width: 100%;
+                    height: 25rem;
+                }
+            }
+
+            .c-left {
+                .contactModes {
+                    width: 100%;
+
+                    .row {
+                        flex-direction: column;
+                        width: 100%;
+
+                        .mode {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

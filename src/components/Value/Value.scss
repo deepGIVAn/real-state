@@ -1,0 +1,99 @@
+.v-wrapper {
+  .v-container>div {
+    flex: 1;
+  }
+
+  .v-left {
+    .image-container {
+      width: 30rem;
+      height: 35rem;
+      overflow: hidden;
+      border-radius: 15rem 15rem 0 0;
+      border: 8px solid rgb(232 232 232/ 0.93);
+
+      &>img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .v-right {
+    gap: 0.5rem;
+  }
+}
+
+.accordian {
+  margin-top: 2rem;
+  border: none;
+
+  .accordianItem {
+    background: white;
+    border: 0.8px solid rgba(128, 128, 128, 0.143);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    &.expanded {
+      box-shadow: var(--shadow);
+      border-radius: 6px;
+    }
+
+    .accordianButton {
+      background: white;
+      padding: 1rem;
+      width: 100%;
+      justify-content: space-between;
+      cursor: pointer;
+
+      .primaryText {
+        font-size: 1.1rem;
+      }
+
+      .icon {
+        padding: 10px;
+        background: #eeeeff;
+        border-radius: 5px;
+
+        & svg {
+          fill: var(--blue);
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width:1024px) {
+  .v-wrapper {
+    .v-container {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .v-left {
+      .image-container {
+        width: 100%;
+        height: 25rem;
+      }
+    }
+  }
+
+  @media (max-width:768px) {
+    .accordian {
+      .accordian-detail {
+        font-size: .7rem;
+      }
+
+      .accordianItem {
+        .accordianButton {
+          font-size: .8rem;
+
+          .primaryText {
+            font-size: .7rem;
+          }
+        }
+      }
+    }
+  }
+}

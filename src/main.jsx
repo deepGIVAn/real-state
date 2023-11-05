@@ -14,11 +14,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         domain={import.meta.env.VITE_AUTH_DOMAIN}
         clientId={import.meta.env.VITE_AUTH_CLIENTID}
         authorizationParams={{
-          redirect_uri: import.meta.env.VITE_APP_CLIENT,
+          // redirect_uri: import.meta.env.VITE_APP_CLIENT,
+          redirect_uri: "https://real-state-client-rho.vercel.app",
           // redirect_uri: "http://localhost:5173",
         }}
-        // audience="http://localhost:8000" 
-        audience={import.meta.env.VITE_APP_API}
+        audience="https://real-state-e55r.vercel.app"
+        // audience={import.meta.env.VITE_APP_API}
         scope="openid profile email"
       >
         <App />

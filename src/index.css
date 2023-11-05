@@ -9,6 +9,10 @@
   --shadow: 0px 23px 21px -8px rgba(136, 160, 255, 0.25);
 }
 
+.wrapper {
+  background-color: white;
+}
+
 * {
   margin: 0;
   padding: 0;

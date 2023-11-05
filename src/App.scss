@@ -1,8 +1,9 @@
 .App {
   position: relative;
   overflow-x: clip;
+  background: white;
 
-  & > :nth-child(1) {
+  &> :nth-child(1) {
     background: var(--black);
     position: relative;
 

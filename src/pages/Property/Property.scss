@@ -1,0 +1,102 @@
+.wrapper {
+    margin-top: 5rem;
+
+    .property-container {
+        position: relative;
+        gap: 2rem;
+
+        .like {
+            position: absolute;
+            top: 3rem;
+            right: 3rem;
+            cursor: pointer;
+        }
+
+        .property-details {
+            width: 100%;
+            gap: 2rem;
+            justify-content: space-between;
+
+            &>div {
+                flex: 1;
+                gap: 1.5rem;
+            }
+
+            .left {
+                .head {
+                    justify-content: space-between;
+                    width: 100%;
+                }
+
+                .facilities {
+                    gap: 0.5rem;
+                    font-size: .9rem;
+                    padding: 1rem;
+
+                    .facility {
+                        gap: 0.5rem;
+                    }
+                }
+
+                .button {
+                    width: 100%;
+                    margin-top: 1rem;
+
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+
+        &>img {
+            align-self: center;
+            max-height: 35rem;
+            width: 100%;
+            border-radius: 2rem;
+            object-fit: cover;
+        }
+    }
+}
+
+@media (max-width:700px) {
+    .wrapper {
+        margin-top: 5rem;
+
+        .property-container {
+
+            &>div {
+                flex-direction: column;
+            }
+
+            .like {}
+
+            .property-details {
+
+                &>div {
+                    width: 100%;
+                }
+
+                .left {
+                    .head {
+                        flex-direction: column;
+                    }
+
+                    .facilities {
+                        flex-direction: column;
+                        align-items: flex-start;
+
+                        .facility {}
+                    }
+
+                    .button {
+
+                        &:hover {}
+                    }
+                }
+            }
+
+            &>img {}
+        }
+    }
+}

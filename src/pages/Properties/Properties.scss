@@ -1,0 +1,25 @@
+.wrapper {
+    margin-top: 5rem;
+
+    .properties-container {
+        gap: 2rem;
+
+        .search-bar {
+            width: clamp(12rem, 100%, 28rem);
+            // min, default, max
+            border-radius: 30px;
+            border: 1px solid rgba(120, 120, 120, 0.374);
+            flex-wrap: nowrap;
+
+            &>input {
+                width: 70%;
+            }
+
+            .button {
+                border-radius: 30px;
+                font-size: 1rem;
+                padding: .6rem 1rem;
+            }
+        }
+    }
+}

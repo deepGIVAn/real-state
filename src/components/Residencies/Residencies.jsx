@@ -1,10 +1,39 @@
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
-import data from "../../utils/slider.json";
+// import data from "../../utils/slider.json";
 import "swiper/css";
 import "./Residencies.scss";
 import { sliderSettings } from "../../utils/common";
+import PropertyCard from "../PropertyCard/PropertyCard";
+import useProperties from "../../hooks/useProperties";
+import { PuffLoader } from "react-spinners";
 
 export default function Residencies() {
+  const { data, isError, isLoading } = useProperties();
+
+  if (isError) {
+    return (
+      <div className="wrapper">
+        <div className="flexCenter paddings">
+          <span>Error while fetching the data</span>
+        </div>
+      </div>
+    );
+  }
+
+  if (isLoading) {
+    return (
+      <div className="wrapper flexCenter" style={{ height: "30vh" }}>
+        <PuffLoader
+          height="80"
+          width="80"
+          radius={1}
+          color="#4066ff"
+          aria-label="puff-loading"
+        />
+      </div>
+    );
+  }
+
   return (
     <section className="r-wrapper">
       <div className="paddings innerWidth r-container">
@@ -14,17 +43,9 @@ export default function Residencies() {
         </div>
         <Swiper {...sliderSettings}>
           <SliderButtons />
-          {data.map((card, i) => (
+          {data.slice(0, 8).map((card, i) => (
             <SwiperSlide key={`slide${i}`}>
-              <div className="flexColStart r-card">
-                <img src={card.image} alt={card.name} />
-                <span className="secondaryText r-price">
-                  <span style={{ color: "orange" }}>$</span>
-                  <span>{card.price}</span>
-                </span>
-                <span className="primaryText">{card.name}</span>
-                <span className="secondaryText">{card.detail}</span>
-              </div>
+              <PropertyCard card={card} />
             </SwiperSlide>
           ))}
         </Swiper>

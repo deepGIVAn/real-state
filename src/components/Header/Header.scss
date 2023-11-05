@@ -1,5 +1,5 @@
 .h-wrapper {
-  background: var(--black);
+  // background: var(--black);
   color: white;
   position: fixed;
   top: 0;
@@ -8,6 +8,9 @@
 
   .h-container {
     justify-content: space-between;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    // color: var(--secondary);
 
     .h-menu {
       gap: 2rem;

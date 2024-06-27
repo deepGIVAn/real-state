@@ -11,6 +11,10 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+app.use('/',(req,res)=>{
+  res.json({message:"Working"});
+})
+
 app.use(morgan("tiny"));
 app.use(express.json());
 app.use(cookieParser());

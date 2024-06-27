@@ -12,6 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use('/',(req,res)=>{
+  console.log("Final Working here ..");
   res.json({message:"Working"});
 })
 

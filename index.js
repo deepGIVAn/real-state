@@ -12,7 +12,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use('/',(req,res)=>{
-  console.log("Final Working here ..");
+  console.log("Final Working here .. --",new Date().toLocaleString());
   res.json({message:"Working"});
 })
 
